@@ -23,7 +23,7 @@ $dictionary['isies_math_tipos'] = [
             'name' => 'caracter',
             'vname' => 'LBL_CARACTER',
             'type' => 'char',
-            'len' => 1,
+            'len' => 5,
             'massupdate' => 0,
             'comments' => 'Caractes especial para identificar el proceso matemático',
             'help' => 'Multiplicar = *, Restar = -, Sumar = +, Dividir = /',
