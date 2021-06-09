@@ -1,0 +1,73 @@
+<?php
+
+$dictionary['isies_math'] = array(
+    'table' => 'isies_math',
+    'fields' => array(
+        'numero_uno' => [
+            'required' => true,
+            'name' => 'numero_uno',
+            'vname' => 'LBL_NUMERO_UNO',
+            'type' => 'decimal',
+            'len' => 7,
+            'precision' => 2,
+            'massupdate' => 0,
+            'comments' => 'Primer numero a procesar',
+            'help' => 'Primer numero a procesar',
+            'importable' => false,
+            'duplicate_merge' => 'disabled',
+            'duplicate_merge_dom_value' => 0,
+            'audited' => 1,
+            'reportable' => 0,
+        ],
+        'numero_dos' => [
+            'required' => true,
+            'name' => 'numero_dos',
+            'vname' => 'LBL_NUMERO_DOS',
+            'type' => 'decimal',
+            'len' => 7,
+            'precision' => 2,
+            'massupdate' => 0,
+            'comments' => 'Segundo numero a procesar',
+            'help' => 'Segundo numero a procesar',
+            'importable' => false,
+            'duplicate_merge' => 'disabled',
+            'duplicate_merge_dom_value' => 0,
+            'audited' => 1,
+            'reportable' => 0,
+        ],
+        'resultado' => [
+            'required' => true,
+            'name' => 'resultado',
+            'vname' => 'LBL_RESULTADO',
+            'type' => 'decimal',
+            'len' => 11,
+            'precision' => 2,
+            'massupdate' => 0,
+            'comments' => '',
+            'help' => '',
+            'importable' => false,
+            'duplicate_merge' => 'disabled',
+            'duplicate_merge_dom_value' => 0,
+            'audited' => 1,
+            'reportable' => 0,
+        ],
+        'tipo_id' => [
+            'required' => true,
+            'name' => 'tipo_id',
+            'vname' => 'LBL_TIPO',
+            'type' => 'int',
+            'len' => 1,
+            'massupdate' => 0,
+            'comments' => '',
+            'help' => '',
+            'importable' => false,
+            'duplicate_merge' => 'disabled',
+            'duplicate_merge_dom_value' => 0,
+            'audited' => 1,
+            'reportable' => 0,
+        ],
+    )
+
+);
+
+?>
