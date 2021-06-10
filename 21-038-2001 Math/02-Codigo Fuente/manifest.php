@@ -51,6 +51,17 @@ $installdefs = array ( // inicio del arreglo de instalación
             'to' => 'modules/Administration/facturacionadminoption.php', 
             ),
         ),
+    'logic_hooks'=>array (
+            array (
+            'module' =>'isies_math',
+            'hook' =>'validate',
+            'order' =>10,
+            'description' =>'Valida todos los campos recibidos por POST',
+            'file' =>'modules/isies_math/hooks/Validate.php',
+            'class' =>'Validate',
+            'function' =>'validate',
+            ),
+        ),
     // Declaracion de layouts, se agregan definiciones de relaciones
     'layoutdefs' => array (
         0 => array (
