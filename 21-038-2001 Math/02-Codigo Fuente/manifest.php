@@ -34,11 +34,6 @@ $installdefs = array ( // inicio del arreglo de instalación
             'from' => '/SugarModules/modules/isies_math', // Directorio origen del archivo
             'to' => 'modules/isies_math', //Directorio destino del archivo
             ),
-        // Se incrementa el indice del archivo
-        1 => array (
-            'from' => '/SugarModules/custom_pegasus/utilerias/entry_point_registry/entries/isies_math.php',
-            'to' => 'custom_pegasus/utilerias/entry_point_registry/entries/isies_math.php'
-            ),
         ),
         // Define los archivos de lenguaje que se utilizara el módulo, aquí se definirán tanto archivos de listas desplegables como los propios del módulo
     'language' => array (
@@ -48,35 +43,12 @@ $installdefs = array ( // inicio del arreglo de instalación
             'to_module' => 'application', //Destino, se especifica la carpeta a donde se copiara el archivo, puede asignarse a application, y se guardara en la instancia principal, o se guardara en el modulo especificado.
             'language' => 'en_us', //Al idioma donde se agregaran los archivos, esto define cuando se utilizaran los archivos al momento de ejecución.
             ),
-        // Se incrementa el indice del archivo
-        1 => array (
-            'from' => '/SugarModules/relationships/language/isies_math.php',
-            'to_module' => 'isies_math',
-            'language' => 'es_es',
-            ),
-        ),
-    // Se agregan las definiciones de los logic hooks del modulo, 
-    'logic_hooks'=>array ( 
-        array (
-            'module' => 'nombreModulo', //Nombre del modulo
-            'hook' => 'process_record', //Tipo de hook
-            'order' => 10, // Orden del hook
-            'description' => 'Mostrar nombres', // Descripción
-            'file'=>'modules/isies_registro_turno/logic_hooks/lista.php', //Archivo que contiene la funcionalidad
-            'class' => 'lista', // Nombre de la clase del hook
-            'function' => 'nombresIds', //Funcion que se ejecutara
-            ),
         ),
     //Se especifican los archivos que se tomaran para la configuración del modulo de administración, este es agregado cuando aparecera el módulo instalado como una entrada en administración. 
     'administration'=> array (
         array ( 
-            'from'=>'/administration/songsadminoption.php', 
-            ),
-        ),
-    // Se definen los archivos referentes a las relaciones creadas para el módulo.
-    'relationships' => array (
-        0 => array (
-            'meta_data' => '/SugarModules/relationships/relationships/isies_math_isies_math_pagosMetaData.php',
+            'from'=>'/administration/mathadminoption.php',
+            'to' => 'modules/Administration/facturacionadminoption.php', 
             ),
         ),
     // Declaracion de layouts, se agregan definiciones de relaciones
