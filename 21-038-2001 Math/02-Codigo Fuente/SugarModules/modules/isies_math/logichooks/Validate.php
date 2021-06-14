@@ -3,13 +3,19 @@
 class Validate {
 
     /**
-     * Verifica que el número no contenga letras o caracteres especiales
-     * @param float $numero
-     * @return bool
+     *@param array $data
+     *@return string $response
      */
-    public function validateNumero($numero) {
-        if(preg_match("/[a-zA-Z]/", $numero)) return false;
-        return true;
+    public static function validateData($data) {
+
+        $response = true;
+        foreach($data as $input) {
+            if(!is_numeric($input)) {
+                $response = false;
+                break;
+            }
+        }
+        return $response;
     }
 
 }
