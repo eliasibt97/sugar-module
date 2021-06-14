@@ -48,34 +48,42 @@ $installdefs = array ( // inicio del arreglo de instalación
     'administration'=> array (
         array ( 
             'from'=>'/administration/mathadminoption.php',
-            'to' => 'modules/Administration/facturacionadminoption.php', 
+            'to' => 'modules/Administration/mathadminoption.php', 
             ),
         ),
     'logic_hooks'=>array (
             array (
             'module' =>'isies_math',
-            'hook' =>'validate',
+            'hook' =>'Validate',
             'order' =>10,
             'description' =>'Valida todos los campos recibidos por POST',
-            'file' =>'modules/isies_math/hooks/Validate.php',
+            'file' =>'modules/isies_math/logichooks/Validate.php',
             'class' =>'Validate',
-            'function' =>'validate',
+            'function' =>'validateNumero',
             ),
         ),
-    // Declaracion de layouts, se agregan definiciones de relaciones
+    /*Declaracion de layouts, se agregan definiciones de relaciones
     'layoutdefs' => array (
         0 => array (
             'from' => '/SugarModules/relationships/layoutdefs/isies_math.php',
             'to_module' => 'isies_math',
             ),
-        ),
+        ),*/
     // Vardefs de las relaciones.
-    'vardefs' => array (
+    'includes' => array (
+        0 =>  array (
+            'file' => 'custom_pegasus/utilerias/javascripts/XHConn.js',
+            ),
+        1 => array (
+            'file' => 'modules/isies_math/javascripts/validaciones.js',
+            ),
+        ),
+    /*'vardefs' => array (
         0 => array (
             'from' => '/SugarModules/relationships/vardefs/isies_math.php',
             'to_module' => 'isies_math',
         ),
-    )
+    )*/
 );
 
 ?>
