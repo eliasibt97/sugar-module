@@ -24,7 +24,13 @@ $installdefs = array ( // inicio del arreglo de instalación
             'class' => 'isies_math',
             'path' => 'modules/isies_math/isies_math.php',
             'tab' => true,
-            ), // Pueden agregarse las definiciones pertinentes a 'N' módulos, siendo cada uno un nuevo elemento del arreglo
+            ),
+        1 => array (
+            'module' => 'isies_math_tipos',
+            'class' => 'isies_math_tipos',
+            'path' => 'modules/isies_math_tipos/isies_math_tipos.php',
+            'tab' => true,
+            ),
         ), // Se declara la clase principal para el modulo a instalar
     'image_dir' => '/icons', //Se define directorio de donde se copiaran las imágenes del módulo.  
     //Aquí se especifican los archivos que se desea se copien al instalar el modulo, pueden agregarse los archivos que sean necesarios, ya sean propios de sugarcrm o agregados por Pegasus para le extensión de alguna funcionalidad.
@@ -36,14 +42,20 @@ $installdefs = array ( // inicio del arreglo de instalación
             ),
         ),
         // Define los archivos de lenguaje que se utilizara el módulo, aquí se definirán tanto archivos de listas desplegables como los propios del módulo
-    'language' => array (
+    /* 'language' => array (
         0 => array (
             'from' => //Directorio origen
             '/SugarModules/language/application/en_us.lang.php',
             'to_module' => 'application', //Destino, se especifica la carpeta a donde se copiara el archivo, puede asignarse a application, y se guardara en la instancia principal, o se guardara en el modulo especificado.
             'language' => 'en_us', //Al idioma donde se agregaran los archivos, esto define cuando se utilizaran los archivos al momento de ejecución.
             ),
-        ),
+        1 => array (
+            'from' => //Directorio origen
+            '/SugarModules/language/application/es_es.lang.php',
+            'to_module' => 'application', //Destino, se especifica la carpeta a donde se copiara el archivo, puede asignarse a application, y se guardara en la instancia principal, o se guardara en el modulo especificado.
+            'language' => 'es_es', //Al idioma donde se agregaran los archivos, esto define cuando se utilizaran los archivos al momento de ejecución.
+            ),
+        ), */
     //Se especifican los archivos que se tomaran para la configuración del modulo de administración, este es agregado cuando aparecera el módulo instalado como una entrada en administración. 
     'administration'=> array (
         array ( 
