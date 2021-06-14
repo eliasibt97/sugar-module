@@ -78,12 +78,12 @@ $installdefs = array ( // inicio del arreglo de instalación
             'file' => 'modules/isies_math/javascripts/validaciones.js',
             ),
         ),
-    /*'vardefs' => array (
+    'vardefs' => array (
         0 => array (
             'from' => '/SugarModules/relationships/vardefs/isies_math.php',
             'to_module' => 'isies_math',
         ),
-    )*/
+    )
 );
 
 ?>
