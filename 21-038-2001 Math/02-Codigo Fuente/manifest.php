@@ -25,12 +25,6 @@ $installdefs = array ( // inicio del arreglo de instalación
             'path' => 'modules/isies_math/isies_math.php',
             'tab' => true,
             ),
-        1 => array (
-            'module' => 'isies_math_tipos',
-            'class' => 'isies_math_tipos',
-            'path' => 'modules/isies_math_tipos/isies_math_tipos.php',
-            'tab' => true,
-            ),
         ), // Se declara la clase principal para el modulo a instalar
     'image_dir' => '/icons', //Se define directorio de donde se copiaran las imágenes del módulo.  
     //Aquí se especifican los archivos que se desea se copien al instalar el modulo, pueden agregarse los archivos que sean necesarios, ya sean propios de sugarcrm o agregados por Pegasus para le extensión de alguna funcionalidad.

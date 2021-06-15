@@ -17,16 +17,14 @@ class isies_math extends SugarController {
         $data = [];
         $data['num1'] = $_REQUEST['numero_uno'];
         $data['num2'] = $_REQUEST['numero_dos'];
-        $data['tipo'] = $_REQUEST['tipo'];
         $data['resultado'] = $_REQUEST['resultado'];
 
-        
         if(!$this->validate->validateData($data)) return [];
 
         $num1 = $data['num1'];
         $num2 = $data['num2'];
         $resultado = $data['resultado'];
-        $tipo = $data['tipo'];
+        $tipo = $_REQUEST['tipo'];
 
         return $this->model->make($num1, $num2, $tipo, $resultado);
     }

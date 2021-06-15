@@ -26,8 +26,8 @@ class MathModel {
 
     public function make($num1, $num2, $tipo, $resultado){
         try {
-            $query = $this->db->connection->prepare("INSERT INTO isies_math (numero_uno, numero_dos, resultado, tipo_id) 
-                                                    VALUES (".$num1.",".$num2.",".$resultado.",".$tipo.");");
+            $query = $this->db->connection->prepare("INSERT INTO isies_math (numero_uno, numero_dos, resultado, tipo) 
+                                                    VALUES (".$num1.",".$num2.",".$resultado.",'".$tipo."');");
             $query->execute();
             return true;
 
