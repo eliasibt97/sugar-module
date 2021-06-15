@@ -1,6 +1,6 @@
 <?php
 
-class isies_math_sugar {
+class isies_math_sugar extends Basic {
 
     public $new_schema = true;
     public $module_dir = 'isies_prueba_modulo';
@@ -14,16 +14,17 @@ class isies_math_sugar {
     public $resultado;
     public $tipo;
 
-    public function __construct(/*$id, $numero_uno, $numero_dos, $resultado, $tipo*/ )
+    public function __construct()
     {
-        /* $this->id = $id ?? 0;
-        $this->numero_uno = $numero_uno;
-        $this->numero_dos = $numero_dos;
-        $this->resultado = $resultado;
-        $this->tipo = $tipo; */
+        parent::__construct();
     }
 
-
+    function bean_implements($interface) {
+        switch ($interface) {
+            case 'ACL': return true;
+        }
+        return false;
+    }
 }
 
 ?>
