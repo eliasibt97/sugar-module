@@ -31,7 +31,7 @@ $installdefs = array ( // inicio del arreglo de instalación
     'copy' => array (
     //Cada archivo a copiar se especifica como un arreglo, donde incrementaremos el indice dependiendo de los archivos agregados. 
         0 => array (
-            'from' => '/SugarModules/modules/isies_math', // Directorio origen del archivo
+            'from' => '<basepath>/SugarModules/modules/isies_math', // Directorio origen del archivo
             'to' => 'modules/isies_math', //Directorio destino del archivo
             ),
         ),
@@ -53,7 +53,7 @@ $installdefs = array ( // inicio del arreglo de instalación
     //Se especifican los archivos que se tomaran para la configuración del modulo de administración, este es agregado cuando aparecera el módulo instalado como una entrada en administración. 
     'administration'=> array (
         array ( 
-            'from'=>'/administration/mathadminoption.php',
+            'from'=>'<basepath>/administration/mathadminoption.php',
             'to' => 'modules/Administration/mathadminoption.php', 
             ),
         ),
@@ -84,12 +84,12 @@ $installdefs = array ( // inicio del arreglo de instalación
             'file' => 'modules/isies_math/javascripts/validaciones.js',
             ),
         ),
-    'vardefs' => array (
+    /* 'vardefs' => array (
         0 => array (
-            'from' => '/SugarModules/relationships/vardefs/isies_math.php',
+            'from' => '<basepath>/SugarModules/relationships/vardefs/isies_math.php',
             'to_module' => 'isies_math',
         ),
-    )
+    )*/
 );
 
 ?>

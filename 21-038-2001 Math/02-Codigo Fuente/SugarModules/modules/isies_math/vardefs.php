@@ -51,9 +51,9 @@ $dictionary['isies_math'] = array(
             'audited' => 1,
             'reportable' => 0,
         ],
-        'tipo_id' => [
+        'tipo' => [
             'required' => true,
-            'name' => 'tipo_id',
+            'name' => 'tipo',
             'vname' => 'LBL_TIPO',
             'type' => 'varchar',
             'len' => 20,

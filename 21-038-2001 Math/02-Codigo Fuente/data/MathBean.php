@@ -19,7 +19,7 @@ class MathBean
             numero_uno DECIMAL(5,2) NOT NULL,
             numero_dos DECIMAL(5,2) NOT NULL,
             resultado DECIMAL(5,2) NOT NULL,
-            tipo_id VARCHAR(20),
+            tipo VARCHAR(20),
             PRIMARY KEY (id),
         )";
         return $mainTable;
