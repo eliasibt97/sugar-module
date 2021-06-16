@@ -8,11 +8,6 @@ class isies_math extends isies_math_sugar {
     {
         parent::__construct();
     }
-
-    
-    
-
-
 }
 
 ?>
