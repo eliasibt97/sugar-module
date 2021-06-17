@@ -3,7 +3,7 @@
 require_once("backend/app/MathModel.php");
 require_once("logichooks/Validate.php");
 
-class isies_math extends SugarController {
+class isies_mathController extends SugarController {
 
     private $model;
     private $validate;
@@ -29,6 +29,22 @@ class isies_math extends SugarController {
         return $this->model->make($num1, $num2, $tipo, $resultado);
     }
 
+    function action_listview(){
+        $this->validarUsuarioNuevoPass();
+        $this->view_object_map['bean'] = $this->bean;
+        $this->view = 'list';
+    }
+
+    function action_editview() {
+        $this->validarUsuarioNuevoPass();
+        $this->view = 'edit';
+    }
+
+    function validarUsuarioNuevoPass() {
+        if(sgc_usuario_nuevo_pass()){
+            $this->redirect_url = 'index.php?module=User&action=ChangePassword';
+        }
+    }
     
 
 }
