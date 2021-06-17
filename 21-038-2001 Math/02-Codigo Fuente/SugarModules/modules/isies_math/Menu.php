@@ -16,7 +16,7 @@
         $module_menu [] = array(
             'index.php?module=isies_math&action=index&return_module=isies_math&return_action=index',
             translate('LNK_LIST', 'isies_math'),
-            'isies_math',
+            'Listisies_math',
             'isies_math'
         );
     }

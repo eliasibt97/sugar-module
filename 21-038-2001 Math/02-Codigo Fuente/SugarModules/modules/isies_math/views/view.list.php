@@ -17,7 +17,7 @@ class isies_mathViewList extends ViewList
     {
 
         if (empty($_REQUEST['orderBy'])) {
-            $_REQUEST['orderBy'] = 'name';
+            $_REQUEST['orderBy'] = 'tipo';
             $_REQUEST['sortOrder'] = 'DESC';
         }
 
