@@ -30,22 +30,25 @@ class isies_mathController extends SugarController {
     }
 
     function action_listview(){
-        $this->validarUsuarioNuevoPass();
         $this->view_object_map['bean'] = $this->bean;
         $this->view = 'list';
     }
 
     function action_editview() {
-        $this->validarUsuarioNuevoPass();
         $this->view = 'edit';
     }
-
-    function validarUsuarioNuevoPass() {
-        if(sgc_usuario_nuevo_pass()){
-            $this->redirect_url = 'index.php?module=User&action=ChangePassword';
-        }
-    }
     
+    /**
+     * Mostrar vista de detalle
+     */
+    function action_detailview()
+    {
+        if (empty($this->bean->id)) {
+            SugarApplication::redirect('index.php?module=' . $this->module);
+        }
+
+        $this->view = 'detail';
+    }
 
 }
 

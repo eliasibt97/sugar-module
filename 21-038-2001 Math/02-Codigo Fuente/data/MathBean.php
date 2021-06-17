@@ -25,6 +25,11 @@ class MathBean
         return $mainTable;
     }
 
+    public function uninstall() {
+        $drop = "DROP TABLE isies_math";
+        return $drop;
+    }
+
 }
 
 ?>
