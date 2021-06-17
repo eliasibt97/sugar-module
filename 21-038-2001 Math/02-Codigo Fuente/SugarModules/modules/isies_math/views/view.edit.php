@@ -4,17 +4,19 @@ require_once("include/MVC/View/views/view.edit.php");
 
 class isies_mathViewEdit extends ViewEdit {
     
-    function display() {
-        global $sgc_configuracion;
+    function preDisplay()
+    {
+        require_once('modules/'.$this->module.'/metadata/metafiles.php');
+        $metadataFile = 'modules/'.$this->module.'/metadata/editviewdefs.php';
+        $this->ev = new EditView();
+        $this->ev->ss =& $this->ss;
+        $this->ev->setup($this->module, $this->bean, $metadataFile, 'include/EditView/EditView.tpl');
+    }
 
-        if( file_exists('cache/modules/isies_math/EditView.tpl') ) {
-            unlink('cache/modules/isies_math/EditView.tpl');
-        }
-
-        $this->ss->assign('modoOperacion', $sgc_configuracion->id(3100));
-        $this->ss->assign('sgc_configuracion', $sgc_configuracion);
-
-        parent::display();
+    function display()
+    {
+        $this->ev->process();
+        echo $this->ev->display($this->showTitle);
     }
 }
 
