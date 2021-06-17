@@ -1,7 +1,7 @@
 <?php
 
-    $viewdefs['isies_math'] = [
-        "EditView" => [
+    $viewdefs['isies_math'] = array(
+        "EditView" => array(
             "templateMeta" =>
             array('maxColumns' => '2',
             'widths' => array(
@@ -23,35 +23,27 @@
                 ),
             ),
         ),
-            "panels" => [
-                "default" => [
-                    0 => [
-                        0 => [
-                            'name' => 'numero_uno',
-                            'label' => 'LBL_NUMERO_UNO'
-                        ],
-                    ],
-                    1 => [
-                        0 => [
-                            'name' => 'numero_dos',
-                            'label' => 'LBL_NUMERO_DOS ]'
-                        ],
-                    ],
-                    2 => [
-                        0 => [
-                            'name' => 'resultado',
-                            'label' => 'LBL_RESULTADO'
-                        ]
-                    ],  
-                    3 => [
-                        0 => [
-                            'name' => 'tipo',
-                            'label' => 'LBL_TIPO'
-                        ]
-                    ]
-                ]
-            ]
-        ]
-    ];
+            "panels" => array(
+                "default" => array(
+                    0 => array(
+                        'name' => 'numero_uno',
+                        //'label' => 'LBL_NUMERO_UNO'
+                    ),
+                    1 => array(
+                        'name' => 'numero_dos',
+                        //'label' => 'LBL_NUMERO_DOS ]'
+                    ),
+                    2 => array(
+                        'name' => 'resultado',
+                        //'label' => 'LBL_RESULTADO'
+                    ),  
+                    3 => array(
+                        'name' => 'tipo',
+                        //'label' => 'LBL_TIPO'
+                    )
+                )
+            )
+        )
+    );
 
 ?>

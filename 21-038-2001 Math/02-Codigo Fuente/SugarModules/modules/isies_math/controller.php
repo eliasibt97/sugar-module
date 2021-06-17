@@ -1,15 +1,12 @@
 <?php
 
-require_once("backend/app/MathModel.php");
 require_once("logichooks/Validate.php");
 
 class isies_mathController extends SugarController {
 
-    private $model;
     private $validate;
-
     public function __construct() {
-        if(!$this->model) $this->model = new MathModel();
+
         if(!$this->validate) $this->validate = new Validate();
     }
 
@@ -21,26 +18,21 @@ class isies_mathController extends SugarController {
 
         if(!$this->validate->validateData($data)) return [];
 
-        $num1 = $data['num1'];
-        $num2 = $data['num2'];
-        $resultado = $data['resultado'];
-        $tipo = $_REQUEST['tipo'];
-
-        return $this->model->make($num1, $num2, $tipo, $resultado);
+        parent::action_save();
+        return true;
     }
 
-    function action_listview(){
+    /*function action_listview(){
         $this->view_object_map['bean'] = $this->bean;
         $this->view = 'list';
-    }
+    }*/
 
     function action_editview() {
         $this->view = 'edit';
     }
     
-    /**
-     * Mostrar vista de detalle
-     */
+    /*
+     
     function action_detailview()
     {
         if (empty($this->bean->id)) {
@@ -48,7 +40,7 @@ class isies_mathController extends SugarController {
         }
 
         $this->view = 'detail';
-    }
+    }*/
 
 }
 

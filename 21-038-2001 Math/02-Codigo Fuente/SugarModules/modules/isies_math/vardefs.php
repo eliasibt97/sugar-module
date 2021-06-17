@@ -3,7 +3,7 @@
 $dictionary['isies_math'] = array(
     'table' => 'isies_math',
     'fields' => array(
-        'numero_uno' => [
+        'numero_uno' => array(
             'required' => true,
             'name' => 'numero_uno',
             'vname' => 'LBL_NUMERO_UNO',
@@ -14,8 +14,8 @@ $dictionary['isies_math'] = array(
             'help' => 'Primer numero a procesar',
             'importable' => false,
             'audited' => 0,
-        ],
-        'numero_dos' => [
+        ),
+        'numero_dos' => array(
             'required' => true,
             'name' => 'numero_dos',
             'vname' => 'LBL_NUMERO_DOS',
@@ -26,8 +26,8 @@ $dictionary['isies_math'] = array(
             'help' => 'Segundo numero a procesar',
             'importable' => false,
             'audited' => 0,
-        ],
-        'resultado' => [
+        ),
+        'resultado' => array(
             'required' => true,
             'name' => 'resultado',
             'vname' => 'LBL_RESULTADO',
@@ -37,8 +37,8 @@ $dictionary['isies_math'] = array(
             'comments' => '',
             'help' => '',
             'audited' => 0,
-        ],
-        'tipo' => [
+        ),
+        'tipo' => array(
             'required' => true,
             'name' => 'tipo',
             'vname' => 'LBL_TIPO',
@@ -46,7 +46,7 @@ $dictionary['isies_math'] = array(
             'len' => 20,
             'importable' => false,
             'audited' => 1,
-        ],
+        ),
     )
 
 );
