@@ -1,22 +1,20 @@
 <?php
 
-require "backend/shared/DBConfig.php";
+// require "../shared/DBConfig.php";
 
 class MathModel {
 
-    private $db;
+    
 
     public function __construct(){
-        if($this->db) $this->db = new DBConfig();
-        return $this->db;
+        /* if($this->db) $this->db = new DBConfig();
+        return $this->db;*/
     }
 
     public function index() {
+        global $db;
         try {
-            $query = $this->db->connection->prepare("SELECT * FROM isies_math;");
-            $query->execute();
-
-            return $query->fetchAll(PDO::FETCH_ASSOC);
+            return $db->query("SELECT * FROM isies_math;");;
         } catch (PDOException $th) {
             throw $th;
         } catch (Exception $e) {
@@ -25,14 +23,12 @@ class MathModel {
     }
 
     public function make($num1, $num2, $tipo, $resultado){
+        global $db;
         try {
-            $query = $this->db->connection->prepare("INSERT INTO isies_math (numero_uno, numero_dos, resultado, tipo_id) 
-                                                    VALUES (".$num1.",".$num2.",".$resultado.",".$tipo.");");
-            $query->execute();
+            $db->query("INSERT INTO isies_math (numero_uno, numero_dos, resultado, tipo) 
+                                                    VALUES (".$num1.",".$num2.",".$resultado.",'".$tipo."');");
             return true;
 
-        } catch (PDOException $th) {
-            throw $th;
         } catch (Exception $e) {
             throw $e->getMessage();
         }
@@ -43,12 +39,10 @@ class MathModel {
      * @param int $id Id de registro en DB
      */
     private function getById($id){
+        global $db;
         try {
-            $query = $this->db->connection->prepare("SELECT id FROM isies_math WHERE id = ".$id);
-            if(!$query->execute()) return false;
+            $db->query("SELECT id FROM isies_math WHERE id = ".$id);
             return true;
-        } catch (PDOException $th) {
-            throw false;
         } catch (Exception $e) {
             throw false;
         }
@@ -60,13 +54,12 @@ class MathModel {
             if(!$this->getById($id)) {
                 return false;
             }
+            global $db;
             //Proceder a la eliminación
-            $query = $this->db->connection->prepare("DELETE FROM isies_math WHERE id = ".$id);
-            $query->execute();
+            $query = $db->query("DELETE FROM isies_math WHERE id = ".$id);
+         
             return true;
 
-        } catch (PDOException $th) {
-            throw $th;
         } catch (Exception $e) {
             throw $e->getMessage();
         }

@@ -1,23 +1,22 @@
 <?php
 $manifest = array (
-    'acceptable_sugar_versions' => array (), //Version de sugar compatible con el módulo, regularmente se deja en blanco
-    'acceptable_sugar_flavors' => array('CE', 'PRO','ENT'), // Tipo de sugacrm con los que sera compatible el módulo
-    'readme'=>'', // archivo readme
-    'key'=>'isies', //Prefijo del módulo
-    'author' => 'Pegasus', //Autor del modulo
-    'description' => 'Calculadora integrada para CRM Sugar', //Descripción del módulo.
-    'icon' => '', //icono usado por el módulo
-    'is_uninstallable' => true, // Definimos si se desinstalara el modulo
-    'name' => 'isies_math', // Nombre del paquete que se esta instalando
-    'published_date' => '2021-06-08 09:00:00', // fecha de publicación del instalador del modulo
-    'type' => 'module', // Tipo de estructura del instalador.
-    'Pegasus' => '1', // Autorización de Pegasus para la instalación del módulo
-    'version' => '1.0.0',//Version del modulo
-    'remove_tables' => 'prompt', //Especifica la remoción de las tablas creadas para el módulo.
-); 
-//Esta primera parte contiene la descripción del instalador en general, ahora se definira el apartado installdefs, que regularmente contiene la estructura de copiado del instalador.
-$installdefs = array ( // inicio del arreglo de instalación
-    'id' => 'ade_instalador', //identificador del instalador.
+    'acceptable_sugar_versions' => array (),
+    'acceptable_sugar_flavors' => array('CE', 'PRO','ENT'),
+    'readme'=>'',
+    'key'=>'isies',
+    'author' => 'Pegasus',
+    'description' => 'Calculadora integrada para CRM Sugar',
+    'icon' => '',
+    'is_uninstallable' => true,
+    'name' => 'isies_math',
+    'published_date' => '2021-06-08 09:00:00',
+    'type' => 'module',
+    'Pegasus' => '1',
+    'version' => '1.0.0',
+    'remove_tables' => 'prompt',
+);
+$installdefs = array ( 
+    'id' => 'ade_instalador',
     'beans' => array (
         0 => array (
             'module' => 'isies_math',
@@ -25,19 +24,12 @@ $installdefs = array ( // inicio del arreglo de instalación
             'path' => 'modules/isies_math/isies_math.php',
             'tab' => true,
             ),
-        1 => array (
-            'module' => 'isies_math_tipos',
-            'class' => 'isies_math_tipos',
-            'path' => 'modules/isies_math_tipos/isies_math_tipos.php',
-            'tab' => true,
-            ),
-        ), // Se declara la clase principal para el modulo a instalar
-    'image_dir' => '/icons', //Se define directorio de donde se copiaran las imágenes del módulo.  
-    //Aquí se especifican los archivos que se desea se copien al instalar el modulo, pueden agregarse los archivos que sean necesarios, ya sean propios de sugarcrm o agregados por Pegasus para le extensión de alguna funcionalidad.
+        ),
+    
     'copy' => array (
     //Cada archivo a copiar se especifica como un arreglo, donde incrementaremos el indice dependiendo de los archivos agregados. 
         0 => array (
-            'from' => '/SugarModules/modules/isies_math', // Directorio origen del archivo
+            'from' => '<basepath>/SugarModules/modules/isies_math', // Directorio origen del archivo
             'to' => 'modules/isies_math', //Directorio destino del archivo
             ),
         ),
@@ -56,10 +48,9 @@ $installdefs = array ( // inicio del arreglo de instalación
             'language' => 'es_es', //Al idioma donde se agregaran los archivos, esto define cuando se utilizaran los archivos al momento de ejecución.
             ),
         ), */
-    //Se especifican los archivos que se tomaran para la configuración del modulo de administración, este es agregado cuando aparecera el módulo instalado como una entrada en administración. 
     'administration'=> array (
         array ( 
-            'from'=>'/administration/mathadminoption.php',
+            'from'=>'<basepath>/administration/mathadminoption.php',
             'to' => 'modules/Administration/mathadminoption.php', 
             ),
         ),
@@ -81,7 +72,6 @@ $installdefs = array ( // inicio del arreglo de instalación
             'to_module' => 'isies_math',
             ),
         ),*/
-    // Vardefs de las relaciones.
     'includes' => array (
         0 =>  array (
             'file' => 'custom_pegasus/utilerias/javascripts/XHConn.js',
@@ -90,12 +80,12 @@ $installdefs = array ( // inicio del arreglo de instalación
             'file' => 'modules/isies_math/javascripts/validaciones.js',
             ),
         ),
-    'vardefs' => array (
+    /* 'vardefs' => array (
         0 => array (
-            'from' => '/SugarModules/relationships/vardefs/isies_math.php',
+            'from' => '<basepath>/SugarModules/relationships/vardefs/isies_math.php',
             'to_module' => 'isies_math',
         ),
-    )
+    )*/
 );
 
 ?>
