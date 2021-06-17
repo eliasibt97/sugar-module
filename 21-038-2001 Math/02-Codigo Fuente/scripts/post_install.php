@@ -3,13 +3,26 @@
 function post_install() {
     
     require_once('data/MathBean.php');
-    $math = new MathBean();
+    $bean = new MathBean();
     $mode = $_POST['mode'];
 
-    if($mode != 'install') throw "Not unistall file found";
+    switch ($mode) {
+        case 'install':
+            global $db;
+            $db->query($bean->install());
+            break;
+            
+        case 'uninstall':
+            global $db;
+            $db->query($bean->uninstall());
+            break;
+            
+        default:
+           throw "Not action allowed";
+            break;
+    }
     
-    global $db;
-    $db->query($math->install());
+
 
 }
 
