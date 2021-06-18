@@ -14,8 +14,8 @@ class MathBean
             PRIMARY KEY (id)
         );";*/
 
-        $mainTable = "CREATE TABLE isies_math(
-            id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        $mainTable = "CREATE TABLE isies_math (
+            id CHAR(36) NOT NULL PRIMARY KEY,
             numero_uno DECIMAL(5,2) NOT NULL,
             numero_dos DECIMAL(5,2) NOT NULL,
             resultado DECIMAL(5,2) NOT NULL,
@@ -24,7 +24,7 @@ class MathBean
     }
 
     public function uninstall() {
-        $drop = "DROP TABLE isies_math";
+        $drop = "DROP TABLE isies_math;";
         return $drop;
     }
 
