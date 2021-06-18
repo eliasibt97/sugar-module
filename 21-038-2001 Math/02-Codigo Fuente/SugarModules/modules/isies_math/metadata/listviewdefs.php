@@ -2,12 +2,12 @@
 
 $module_name = 'isies_math';
 $listViewDefs[$module_name] = array(
-    /* 'NAME' => array(
+    'NAME' => array(
         'width' => '25',
         'label' => 'LBL_NAME',
         'dafault' => true,
         'link' => true,
-    ),*/
+    ),
     'NUMERO_UNO' => array(
         'width' => '25',
         'label' => 'LBL_NUMERO_UNO',
