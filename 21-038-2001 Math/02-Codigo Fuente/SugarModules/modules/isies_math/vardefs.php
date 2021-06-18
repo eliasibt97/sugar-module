@@ -8,7 +8,7 @@ $dictionary['isies_math'] = array(
             'name' => 'numero_uno',
             'vname' => 'LBL_NUMERO_UNO',
             'type' => 'decimal',
-            'len' => 7,
+            'len' => 5,
             'precision' => 2,
             'comments' => 'Primer numero a procesar',
             'help' => 'Primer numero a procesar',
@@ -20,7 +20,7 @@ $dictionary['isies_math'] = array(
             'name' => 'numero_dos',
             'vname' => 'LBL_NUMERO_DOS',
             'type' => 'decimal',
-            'len' => 7,
+            'len' => 5,
             'precision' => 2,
             'comments' => 'Segundo numero a procesar',
             'help' => 'Segundo numero a procesar',
@@ -32,7 +32,7 @@ $dictionary['isies_math'] = array(
             'name' => 'resultado',
             'vname' => 'LBL_RESULTADO',
             'type' => 'decimal',
-            'len' => 11,
+            'len' => 5,
             'precision' => 2,
             'comments' => '',
             'help' => '',
@@ -50,5 +50,11 @@ $dictionary['isies_math'] = array(
     )
 
 );
+
+if (!class_exists('VardefManager') ) {
+    require_once('include/SugarObjects/VardefManager.php');
+}
+
+VardefManager::createVardef('isies_math', 'isies_math', array('basic'));
 
 ?>

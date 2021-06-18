@@ -2,7 +2,7 @@
 
 function post_install() {
     
-    require_once('data/MathBean.php');
+    /* require_once('data/MathBean.php');
     $bean = new MathBean();
     $mode = $_POST['mode'];
 
@@ -20,7 +20,7 @@ function post_install() {
         default:
            throw "Not action allowed";
             break;
-    }
+    } */
     
 
 
