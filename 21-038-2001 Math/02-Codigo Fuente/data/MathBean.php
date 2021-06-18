@@ -15,12 +15,11 @@ class MathBean
         );";*/
 
         $mainTable = "CREATE TABLE isies_math (
-            id INT NOT NULL,
+            id INT PRIMARY KEY,
             numero_uno DECIMAL(5,2) NOT NULL,
             numero_dos DECIMAL(5,2) NOT NULL,
             resultado DECIMAL(5,2) NOT NULL,
             tipo VARCHAR(20),
-            PRIMARY KEY (id),
         )";
         return $mainTable;
     }

@@ -12,7 +12,7 @@ $manifest = array (
     'published_date' => '2021-06-08 09:00:00',
     'type' => 'module',
     'Pegasus' => '1',
-    'version' => '1.0.0',
+    'version' => '1.2.0',
     'remove_tables' => 'prompt',
 );
 $installdefs = array ( 
