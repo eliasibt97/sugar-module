@@ -14,13 +14,12 @@ class MathBean
             PRIMARY KEY (id)
         );";*/
 
-        $mainTable = "CREATE TABLE isies_math (
-            id INT PRIMARY KEY,
+        $mainTable = "CREATE TABLE isies_math(
+            id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
             numero_uno DECIMAL(5,2) NOT NULL,
             numero_dos DECIMAL(5,2) NOT NULL,
             resultado DECIMAL(5,2) NOT NULL,
-            tipo VARCHAR(20),
-        )";
+            tipo VARCHAR(20));";
         return $mainTable;
     }
 
